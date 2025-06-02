@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client": {
+    "e-commerce-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,8 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            // "outputPath": "dist/e-commerce-app",
             "outputPath": {
-              "base": "../API/wwwroot",
+              "base": "../ECommerceApp/API/wwwroot",
               "browser": ""
             },
             "index": "src/index.html",
@@ -79,10 +80,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "client:build:production"
+              "buildTarget": "e-commerce-app:build:production"
             },
             "development": {
-              "buildTarget": "client:build:development"
+              "buildTarget": "e-commerce-app:build:development"
             }
           },
           "defaultConfiguration": "development"

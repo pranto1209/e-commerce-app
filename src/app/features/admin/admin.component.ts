@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { Order } from '../../shared/models/order';
-import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { AdminService } from '../../core/services/admin.service';
 import { OrderParams } from '../../shared/models/orderParams';
-import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatLabel, MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { CurrencyPipe, DatePipe } from '@angular/common';
@@ -19,7 +18,6 @@ import { DialogService } from '../../core/services/dialog.service';
   imports: [
     MatTableModule,
     MatPaginatorModule,
-    MatButton,
     MatIcon,
     MatSelectModule,
     DatePipe,
@@ -28,7 +26,7 @@ import { DialogService } from '../../core/services/dialog.service';
     MatTooltipModule,
     MatTabsModule,
     RouterLink
-  ],
+],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })
