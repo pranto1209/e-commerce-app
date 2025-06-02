@@ -9,7 +9,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { adminGuard } from './core/guards/admin.guard';
 
 export const routes: Routes = [
-    {path: '', component: ShopComponent},
+    {path: '', redirectTo: 'shop', pathMatch: 'full'},
     {path: 'shop', component: ShopComponent},
     {path: 'shop/:id', component: ProductDetailsComponent},
     {path: 'cart', component: CartComponent},
