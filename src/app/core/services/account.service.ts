@@ -21,7 +21,7 @@ export class AccountService {
   login(values: any) {
     let params = new HttpParams();
     params = params.append('useCookies', true);
-    return this.http.post<User>(this.baseUrl + 'login', values, {params}).pipe(
+    return this.http.post<User>(this.baseUrl + 'login', values, { params }).pipe(
       tap(() => this.signalrService.createHubConnection())
     )
   }
@@ -57,6 +57,6 @@ export class AccountService {
   }
 
   getAuthState() {
-    return this.http.get<{isAuthenticated: boolean}>(this.baseUrl + 'account/auth-status');
+    return this.http.get<{ isAuthenticated: boolean }>(this.baseUrl + 'account/auth-status');
   }
 }

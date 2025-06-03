@@ -16,7 +16,7 @@ export class CheckoutService {
     if (this.deliveryMethods.length > 0) return of(this.deliveryMethods);
     return this.http.get<DeliveryMethod[]>(this.baseUrl + 'payments/delivery-methods').pipe(
       map(methods => {
-        this.deliveryMethods = methods.sort((a,b) => b.price - a.price);
+        this.deliveryMethods = methods.sort((a, b) => b.price - a.price);
         return methods;
       })
     )

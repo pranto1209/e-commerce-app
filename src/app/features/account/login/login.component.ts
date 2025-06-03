@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatCard,

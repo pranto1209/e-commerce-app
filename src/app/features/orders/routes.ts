@@ -4,6 +4,6 @@ import { OrderDetailedComponent } from "./order-detailed/order-detailed.componen
 import { OrderComponent } from "./order.component";
 
 export const orderRoutes: Route[] = [
-    {path: '', component: OrderComponent, canActivate: [authGuard]},
-    {path: ':id', component: OrderDetailedComponent, canActivate: [authGuard]},
+    { path: '', component: OrderComponent, canActivate: [authGuard] },
+    { path: ':id', component: OrderDetailedComponent, canActivate: [authGuard] },
 ]

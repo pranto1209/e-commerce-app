@@ -21,11 +21,11 @@ function initializeApp(initService: InitService) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([
-      errorInterceptor, 
+      errorInterceptor,
       loadingInterceptor,
       authInterceptor
     ])),

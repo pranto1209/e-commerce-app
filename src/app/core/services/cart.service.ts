@@ -23,7 +23,7 @@ export class CartService {
 
     if (!cart) return null;
     const subtotal = cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    
+
     let discountValue = 0;
 
     if (cart.coupon) {
@@ -33,7 +33,7 @@ export class CartService {
         discountValue = subtotal * (cart.coupon.percentOff / 100);
       }
     }
-    
+
     const shipping = delivery ? delivery.price : 0;
 
     return {
@@ -74,7 +74,7 @@ export class CartService {
     await firstValueFrom(this.setCart(cart));
   }
 
-async removeItemFromCart(productId: number, quantity = 1) {
+  async removeItemFromCart(productId: number, quantity = 1) {
     const cart = this.cart();
     if (!cart) return;
     const index = cart.items.findIndex(x => x.productId === productId);
@@ -93,7 +93,7 @@ async removeItemFromCart(productId: number, quantity = 1) {
   }
 
   deleteCart() {
-    this.http.delete(this.baseUrl  + 'cart?id=' + this.cart()?.id).subscribe({
+    this.http.delete(this.baseUrl + 'cart?id=' + this.cart()?.id).subscribe({
       next: () => {
         localStorage.removeItem('cart_id');
         this.cart.set(null);

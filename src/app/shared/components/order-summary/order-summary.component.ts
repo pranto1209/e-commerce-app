@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-order-summary',
-  standalone: true,
   imports: [
     MatButton,
     RouterLink,

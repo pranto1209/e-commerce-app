@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, output } from '@angular/core';
 import { CheckoutService } from '../../../core/services/checkout.service';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../../../core/services/cart.service';
 import { DeliveryMethod } from '../../../shared/models/deliveryMethod';
@@ -8,7 +8,6 @@ import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-checkout-delivery',
-  standalone: true,
   imports: [
     MatRadioModule,
     CurrencyPipe

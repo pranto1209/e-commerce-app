@@ -36,7 +36,7 @@ export class ShopService {
     params = params.append('pageSize', shopParams.pageSize);
     params = params.append('pageIndex', shopParams.pageNumber);
 
-    return this.http.get<Pagination<Product>>(this.baseUrl + 'products', {params});
+    return this.http.get<Pagination<Product>>(this.baseUrl + 'products', { params });
   }
 
   getProduct(id: number) {

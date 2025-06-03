@@ -18,6 +18,6 @@ export class IsAdminDirective {
         this.viewContainerRef.clear();
       }
     })
-   }
+  }
 
 }

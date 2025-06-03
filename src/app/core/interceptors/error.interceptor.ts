@@ -7,7 +7,7 @@ import { SnackbarService } from '../services/snackbar.service';
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
   const snackbar = inject(SnackbarService);
-  
+
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
       if (err.status === 400) {
@@ -33,7 +33,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
         router.navigateByUrl('/not-found');
       }
       if (err.status === 500) {
-        const navigationExtras: NavigationExtras = {state: {error: err.error}}
+        const navigationExtras: NavigationExtras = { state: { error: err.error } }
         router.navigateByUrl('/server-error', navigationExtras);
       }
       return throwError(() => err)

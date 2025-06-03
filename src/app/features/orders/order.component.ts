@@ -6,7 +6,6 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-order',
-  standalone: true,
   imports: [
     RouterLink,
     DatePipe,

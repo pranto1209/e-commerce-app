@@ -12,7 +12,6 @@ import { AdminService } from '../../../core/services/admin.service';
 
 @Component({
   selector: 'app-order-detailed',
-  standalone: true,
   imports: [
     MatCardModule,
     MatButton,
@@ -20,7 +19,7 @@ import { AdminService } from '../../../core/services/admin.service';
     CurrencyPipe,
     AddressPipe,
     PaymentCardPipe
-],
+  ],
   templateUrl: './order-detailed.component.html',
   styleUrl: './order-detailed.component.scss'
 })
@@ -38,7 +37,7 @@ export class OrderDetailedComponent implements OnInit {
   }
 
   onReturnClick() {
-    this.accountService.isAdmin() 
+    this.accountService.isAdmin()
       ? this.router.navigateByUrl('/admin')
       : this.router.navigateByUrl('/orders')
   }

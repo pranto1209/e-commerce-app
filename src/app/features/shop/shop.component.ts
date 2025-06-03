@@ -16,7 +16,6 @@ import { EmptyStateComponent } from "../../shared/components/empty-state/empty-s
 
 @Component({
   selector: 'app-shop',
-  standalone: true,
   imports: [
     ProductItemComponent,
     MatButton,
@@ -28,7 +27,7 @@ import { EmptyStateComponent } from "../../shared/components/empty-state/empty-s
     MatPaginator,
     FormsModule,
     EmptyStateComponent
-],
+  ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })
@@ -37,17 +36,17 @@ export class ShopComponent {
   private dialogService = inject(MatDialog);
   products?: Pagination<Product>;
   sortOptions = [
-    {name: 'Alphabetical', value: 'name'},
-    {name: 'Price: Low-High', value: 'priceAsc'},
-    {name: 'Price: High-Low', value: 'priceDesc'},
+    { name: 'Alphabetical', value: 'name' },
+    { name: 'Price: Low-High', value: 'priceAsc' },
+    { name: 'Price: High-Low', value: 'priceDesc' },
   ]
   shopParams = new ShopParams();
-  pageSizeOptions = [5,10,15,20]
+  pageSizeOptions = [5, 10, 15, 20]
 
   ngOnInit() {
     this.initialiseShop();
   }
-  
+
   initialiseShop() {
     this.shopService.getTypes();
     this.shopService.getBrands();

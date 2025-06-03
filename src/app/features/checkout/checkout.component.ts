@@ -1,12 +1,12 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { OrderSummaryComponent } from "../../shared/components/order-summary/order-summary.component";
-import {MatStepper, MatStepperModule} from '@angular/material/stepper';
+import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { MatButton } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
 import { StripeService } from '../../core/services/stripe.service';
 import { ConfirmationToken, StripeAddressElement, StripeAddressElementChangeEvent, StripePaymentElement, StripePaymentElementChangeEvent } from '@stripe/stripe-js';
 import { SnackbarService } from '../../core/services/snackbar.service';
-import {MatCheckboxChange, MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { Address } from '../../shared/models/user';
 import { firstValueFrom } from 'rxjs';
@@ -15,13 +15,12 @@ import { CheckoutDeliveryComponent } from "./checkout-delivery/checkout-delivery
 import { CheckoutReviewComponent } from "./checkout-review/checkout-review.component";
 import { CartService } from '../../core/services/cart.service';
 import { CurrencyPipe, JsonPipe } from '@angular/common';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OrderToCreate, ShippingAddress } from '../../shared/models/order';
 import { OrderService } from '../../core/services/order.service';
 
 @Component({
   selector: 'app-checkout',
-  standalone: true,
   imports: [
     OrderSummaryComponent,
     MatStepperModule,
@@ -31,9 +30,8 @@ import { OrderService } from '../../core/services/order.service';
     CheckoutDeliveryComponent,
     CheckoutReviewComponent,
     CurrencyPipe,
-    JsonPipe,
     MatProgressSpinnerModule
-],
+  ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
@@ -47,8 +45,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   addressElement?: StripeAddressElement;
   paymentElement?: StripePaymentElement;
   saveAddress = false;
-  completionStatus = signal<{address: boolean, card: boolean, delivery: boolean}>(
-    {address: false, card: false, delivery: false}
+  completionStatus = signal<{ address: boolean, card: boolean, delivery: boolean }>(
+    { address: false, card: false, delivery: false }
   );
   confirmationToken?: ConfirmationToken;
   loading = false;
@@ -133,7 +131,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
             this.router.navigateByUrl('/checkout/success');
           } else {
             throw new Error('Order creation failed');
-          } 
+          }
         } else if (result.error) {
           throw new Error(result.error.message);
         } else {

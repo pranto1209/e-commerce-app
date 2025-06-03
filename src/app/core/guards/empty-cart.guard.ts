@@ -12,6 +12,6 @@ export const emptyCartGuard: CanActivateFn = (route, state) => {
     snack.error('Your cart is empty');
     router.navigateByUrl('/cart');
     return false;
-  } 
+  }
   return true;
 };

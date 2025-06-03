@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatBadge } from '@angular/material/badge';
 import { MatButton } from '@angular/material/button';
-import {MatIcon} from '@angular/material/icon';
+import { MatIcon } from '@angular/material/icon';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { BusyService } from '../../core/services/busy.service';
 import { MatProgressBar } from '@angular/material/progress-bar';
@@ -13,7 +13,6 @@ import { IsAdminDirective } from '../../shared/directives/is-admin.directive';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [
     MatIcon,
     MatButton,

@@ -5,7 +5,6 @@ import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-text-input',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatFormField,
@@ -23,7 +22,7 @@ export class TextInputComponent implements ControlValueAccessor {
   constructor(@Self() public controlDir: NgControl) {
     this.controlDir.valueAccessor = this;
   }
-  
+
   writeValue(obj: any): void {
   }
 

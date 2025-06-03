@@ -10,7 +10,6 @@ import { OrderService } from '../../../core/services/order.service';
 
 @Component({
   selector: 'app-checkout-success',
-  standalone: true,
   imports: [
     MatButton,
     RouterLink,
