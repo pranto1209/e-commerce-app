@@ -1,6 +1,7 @@
 # E-Commerce App
 
-Developed an E-Commerce web application using C# and ASP.NET Core Web API, following Clean Architecture principles. Implemented Repository, Unit of Work, and Specification patterns for maintainable and scalable code. Used Entity Framework Core as the ORM for database operations with SQL Server. Integrated ASP.NET Identity for secure login, registration, and role-based authorization. Key features include product pagination, sorting, searching, and filtering; shopping basket stored in Redis cache; and real-time notifications using SignalR WebSockets. Payment processing was handled via Stripe, supporting the latest EU 3D Secure standards. The frontend was built with Angular, utilizing reusable components, directives, pipes, services, guards, and reactive forms, along with lazy-loaded routes for performance optimization. The user interface was styled using Angular Material and Tailwind CSS.
+An E-Commerce web application to browse, search and purchase products. The backend was built using C# ASP.NET Web API, following clean architecture principles. Implemented repository, unit of work, and specification patterns for maintainable and scalable code. Used Entity Framework Core as the ORM for database operations with SQL Server. Integrated ASP.NET Identity for secure login, registration, and role based authorization. Key features include product pagination, sorting, searching, and filtering; shopping basket stored in Redis cache; payment processing was handled via Stripe Webhooks; and real-time notifications using SignalR WebSockets. The frontend was built with Angular, utilizing reusable components, pipes, services, guards, interceptors, and reactive forms, along with lazy-loaded routes for performance optimization. The user interface was styled using Angular Material and Tailwind CSS.
+
 
 ## Frontend Project
 
@@ -10,7 +11,9 @@ Developed an E-Commerce web application using C# and ASP.NET Core Web API, follo
 
 [ECommerceApp](https://github.com/pranto1209/ECommerceApp)
 
+
 ## Screenshots
+
 ![](docs/1.png)
 
 ![](docs/2.png)
@@ -39,7 +42,8 @@ Developed an E-Commerce web application using C# and ASP.NET Core Web API, follo
 
 ![](docs/14.png)
 
-## SSL
+
+## Development server
 
 * To run the project in HTTPS, install mkcert using the instructions provided in its repository [here](https://github.com/FiloSottile/mkcert). Then run command:
 
@@ -60,6 +64,16 @@ ng serve --ssl true
 ```bash
 ng serve --ssl false
 ```
+
+
+## Building
+
+* To build the project run:
+
+```bash
+ng build
+```
+
 
 ## Stripe
 
